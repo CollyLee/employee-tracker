@@ -1,15 +1,8 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
-const { opening, addDept, addRole, addEmployee, updateEmployeeRole } = require('./questions')
-const { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addARole } = require('./queries')
-const db = mysql.createConnection(
-    {
-        host: 'localhost',
-        user: 'root',
-        password: 'CQitBG89',
-        database: 'employee_db'
-    },
-);
+const cTable = require('console.table')
+const { opening } = require('./questions')
+const { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addARole, addAnEmployee, updateEmpRole } = require('./queries')
 
 const init = () => openingAction()
 
@@ -39,20 +32,15 @@ const openingAction = async () => {
             addARole()
             break;
 
-        // case 'Add an Employee':
-        //     addAnEmployee()
-        //     break;
+        case 'Add an Employee':
+            addAnEmployee()
+            break;
 
-        // case 'Update Employee Role':
-        //     updateEmpRole()
-        //     break;
+        case 'Update Employee Role':
+            updateEmpRole()
+            break;
 
     };
-
-    
 }
-
-
-
 
 init();

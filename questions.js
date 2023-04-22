@@ -11,7 +11,7 @@ const opening = [
 const addDept = [
     {
         type: "input",
-        message: "Please enter the name of the department you would like to add.",
+        message: "Please enter the name of the department you would like to add (see above for current department directory).",
         name: "newDeptName",
     }
 ];
@@ -60,12 +60,12 @@ const addEmployee = [
 const updateEmployeeRole = [
     {
         type: "input",
-        message: "Select the employee you wish to update",
+        message: "Select the id of the employee you wish to update",
         name: "updatedEmp",
     },
     {
         type: "input",
-        message: "Select this employee's new role",
+        message: "Select this employee's new role id",
         name: "updatedRole",
     }
 ];

@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const cTable = require('console.table');
 const mysql = require('mysql2');
 const { opening, addDept, addRole, addEmployee, updateEmployeeRole } = require('./questions')
 const db = mysql.createConnection(
@@ -54,8 +55,30 @@ const addARole = async () => {
     });
 }
 
+const addAnEmployee = async () => {
+    let answer = await inquirer.prompt(addEmployee);
+
+    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('${answer.newEmpFirstName}', '${answer.newEmpLastName}', '${answer.newEmpRole}', '${answer.newEmpManagerID}')`, (err, result) => {
+        console.log('Employee added! See below for updated role directory.')
+    });
+
+    db.query('SELECT * FROM employee', (err, result) => {
+        console.table(result)
+    });
+}
+
+const updateEmpRole = async () => {
+    let answer = await inquirer.prompt(updateEmployeeRole);
+
+    db.query(`UPDATE employee SET role_id = '${answer.updatedRole}' WHERE id = '${answer.updatedEmp}'`, (err, result) => {
+        console.log('Employee updated! See below for updated role directory.')
+    });
+
+    db.query('SELECT * FROM employee', (err, result) => {
+        console.table(result)
+    });
+}
 
 
 
-
-module.exports = { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addARole };
+module.exports = { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addARole, addAnEmployee, updateEmpRole };
