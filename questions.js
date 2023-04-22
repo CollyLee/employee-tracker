@@ -19,17 +19,17 @@ const addDept = [
 const addRole = [
     {
         type: "input",
-        message: "Please enter the name of the role you wish to add.",
-        name: "newRoleName",
+        message: "Please enter the title of the role you wish to add.",
+        name: "newRoleTitle",
     },
     {
-        type: "input",
+        type: "number",
         message: "Please enter the salary of the new role.",
         name: "newRoleSalary",
     },
     {
-        type: "input",
-        message: "Please enter the department name this role belongs to",
+        type: "number",
+        message: "Please enter the department id this role belongs to",
         name: "newRoleDept",
     }
 ];
@@ -70,4 +70,12 @@ const updateEmployeeRole = [
     }
 ];
 
-module.exports = { opening, addDept, addRole, addEmployee, updateEmployeeRole};
+// const continuePrompt = [
+//     {
+//         type: "confirm",
+//         message: "Do you want to enter another command?",
+//         name: continueConf,
+//     }
+// ]
+
+module.exports = { opening, addDept, addRole, addEmployee, updateEmployeeRole };
