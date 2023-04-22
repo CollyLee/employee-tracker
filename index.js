@@ -9,7 +9,6 @@ const init = () => openingAction()
 const openingAction = async () => {
 
     let action = await inquirer.prompt(opening);
-    console.log(action.actionOptions);
     
     switch (action.actionOptions) {
         case 'View All Departments':
@@ -44,3 +43,5 @@ const openingAction = async () => {
 }
 
 init();
+
+module.exports = { openingAction };

@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const mysql = require('mysql2');
-const { opening, addDept, addRole, addEmployee, updateEmployeeRole } = require('./questions')
+// const { openingAction } = require('./index')
+const { addDept, addRole, addEmployee, updateEmployeeRole } = require('./questions')
 const db = mysql.createConnection(
     {
         host: 'localhost',
@@ -16,6 +17,7 @@ const viewAllDepartments = () => {
     db.query('SELECT * FROM department', (err, result) => {
         console.table(result);
     })
+    // openingAction();
 };
 
 const viewAllRoles = () => {
@@ -78,7 +80,5 @@ const updateEmpRole = async () => {
         console.table(result)
     });
 }
-
-
 
 module.exports = { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addARole, addAnEmployee, updateEmpRole };
