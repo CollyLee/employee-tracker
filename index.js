@@ -1,73 +1,70 @@
-// INQUIRER PROMPTS
-const opening = [
-    {
-        type: "list",
-        message: "What would you like to do?",
-        name: "actionOptions",
-        choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update Employee Role"],
-    }
-]
+const { opening, addDept, addRole, addEmployee, updateEmployeeRole } = require('./questions')
 
-const addDept = [
-    {
-        type: "input",
-        message: "Please enter the name of the department you would like to add.",
-        name: "newDeptName",
-    }
-]
+const init = () => {
+    inquirer.prompt(opening)
+};
 
-const addRole = [
-    {
-        type: "input",
-        message: "Please enter the name of the role you wish to add.",
-        name: "newRoleName",
-    },
-    {
-        type: "input",
-        message: "Please enter the salary of the new role.",
-        name: "newRoleSalary",
-    },
-    {
-        type: "input",
-        message: "Please enter the department name this role belongs to",
-        name: "newRoleDept",
-    }
-]
+switch (actionOptions) {
+    case 'View All Departments':
+        action = viewAllDepartments()
+    break;
 
-const addEmployee = [
-    {
-        type: "input",
-        message: "Please enter the employee's first name.",
-        name: "newEmpFirstName",
-    },
-    {
-        type: "input",
-        message: "Please enter the employee's last name.",
-        name: "newEmpLastName",
-    },
-    {
-        type: "input",
-        message: "Please enter the name of this employee's role",
-        name: "newEmpRole",
-    },
-    {
-        type: "input",
-        message: "Please enter the id number of this employee's manager",
-        name: "newEmpManagerID",
-    }
-]
+    case 'View All Roles':
+        action = viewAllRoles()
+    break;
 
-const updateEmployeeRole = [
-    {
-        type: "list",
-        message: "Select the employee you wish to update",
-        name: "updatedEmp",
-        choices: ,
-    },
-    {
-        type: "list",
-        message: "Select this employee's new role",
-        name: "updatedRole",
-        choices: ,
-    }
-]
+    case 'View All Employees':
+        action = viewAllEmployees()
+    break;
+
+    case 'Add a Department':
+        action = addADepartment()
+    break;
+
+    case 'Add a Role':
+        action = addARole()
+    break;
+
+    case 'Add an Employee':
+        action = addAnEmployee()
+    break;
+
+    case 'Update Employee Role':
+        action = updateEmpRole()
+    break;
+};
+
+ const viewAllDepartments = () => {
+
+ };
+
+ 
+ const viewAllRoles = () => {
+
+ };
+
+ 
+ const viewAllEmployees = () => {
+
+ };
+
+ 
+ const addADepartment = () => {
+
+ };
+
+ 
+ const addARole = () => {
+
+ };
+
+ 
+ const addAnEmployee = () => {
+
+ };
+
+ const updateEmpRole = () => {
+
+ };
+
+init();
