@@ -46,12 +46,12 @@ const addEmployee = [
         name: "newEmpLastName",
     },
     {
-        type: "input",
-        message: "Please enter the name of this employee's role",
+        type: "number",
+        message: "Please enter the employee's role id number.",
         name: "newEmpRole",
     },
     {
-        type: "input",
+        type: "number",
         message: "Please enter the id number of this employee's manager",
         name: "newEmpManagerID",
     }
@@ -70,12 +70,6 @@ const updateEmployeeRole = [
     }
 ];
 
-// const continuePrompt = [
-//     {
-//         type: "confirm",
-//         message: "Do you want to enter another command?",
-//         name: continueConf,
-//     }
-// ]
+
 
 module.exports = { opening, addDept, addRole, addEmployee, updateEmployeeRole };
