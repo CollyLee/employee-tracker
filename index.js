@@ -7,32 +7,35 @@ const { viewAllDepartments, viewAllRoles, viewAllEmployees, addADepartment, addA
 const init = () => openingAction()
 
 const openingAction = async () => {
-
+    console.log('/*************************************************/')
     let action = await inquirer.prompt(opening);
     
     switch (action.actionOptions) {
         case 'View All Departments':
             viewAllDepartments();
+            setTimeout(openingAction, 1000);
             break;
 
         case 'View All Roles':
-            viewAllRoles()
+            viewAllRoles();
+            setTimeout(openingAction, 1000);
             break;
 
         case 'View All Employees':
-            viewAllEmployees()
+            viewAllEmployees();
+            setTimeout(openingAction, 1000);
             break;
 
         case 'Add a Department':
-            addADepartment()
+            addADepartment();
             break;
 
         case 'Add a Role':
-            addARole()
+            addARole();
             break;
 
         case 'Add an Employee':
-            addAnEmployee()
+            addAnEmployee();
             break;
 
         case 'Update Employee Role':
