@@ -10,6 +10,8 @@ No installation is necessary for the application. It can be called directly in N
 
 ## Usage
 
+A video guide on how to use the application can be found [here](https://drive.google.com/file/d/1DEwzR2zdHYyYtVz0PttqxWnbhmDPz788/view).
+
 Launch the program by opening the terminal in your root folder, and running "node index.js". This will kick off the initial prompt, asking what action you would like to take. 
 
 ![project-screenshot-1](./assets/project-screenshot-1.png)
